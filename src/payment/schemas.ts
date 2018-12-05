@@ -1,7 +1,7 @@
 import * as joi from "joi";
 import { updateRequestSchema } from "../api/schemas";
 
-export const paymentIdSchema = joi.string().regex(/PAY-[a-zA-Z0-9]*/);
+export const paymentIdSchema = joi.string().regex(/(PAY|PAYID)-[a-zA-Z0-9]*/);
 
 export const paypalShippingAddressSchema = joi.object().keys({
     city: joi.string().trim().empty("").max(50).required(),
